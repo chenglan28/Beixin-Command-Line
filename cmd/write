@@ -1,0 +1,16 @@
+var fs = require("fs")
+module.exports = (cmd)=>{
+    cmd.shift();
+    var _cmd = cmd.shift();
+    if(_cmd != "" && _cmd != undefined) {
+        _cmd = global.path + _cmd;
+        try {
+            cmd = cmd.join(" ");
+            fs.writeFileSync(_cmd,cmd.replace(/\\n/gi,"\n"))
+            console.log("写入成功")
+        }catch(e){
+            console.log(e)
+        }
+    }else console.log("没有指定文件")
+    
+}

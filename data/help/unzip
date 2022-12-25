@@ -1,0 +1,4 @@
+UNZIP [path] [zipPath]
+
+   path - 需要进行压缩的文件夹
+   zipPath - 输出的zip文件

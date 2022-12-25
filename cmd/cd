@@ -1,0 +1,13 @@
+var fs = require("fs");
+var path  = require('path');
+module.exports = (cmd)=>{
+    if(cmd[1] != "" && cmd[1] != undefined) {
+        var _path = global.path;
+        global.path = path.normalize(global.path + cmd[1] + "/").replace(/\\/gi,"\/");
+        
+        if(fs.existsSync(global.path) == false){
+            global.path = _path;
+            console.log("不存在该目录")
+        }
+    }else console.log("没有指定路径");
+}

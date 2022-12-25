@@ -1,0 +1,11 @@
+var fs = require("fs");
+var compressing = require('compressing');
+module.exports = (cmd)=>{
+    compressing.zip.uncompress(global.path + cmd[1], global.path + cmd[2])
+    .then(() => {
+        console.log(`已将 ${global.path + cmd[1]} 中压缩的内容解压到 ${global.path + cmd[2]}`);
+    })
+    .catch(err => {
+        console.error(err);
+    });
+}

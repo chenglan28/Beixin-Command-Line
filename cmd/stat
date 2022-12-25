@@ -1,0 +1,21 @@
+var fs = require("fs")
+module.exports = (cmd)=>{
+    if(cmd[1] != "" && cmd[1] != undefined) {
+            cmd[1] = global.path + cmd[1];
+        try {
+            stat = fs.statSync(cmd[1])
+            console.log(stat,"\n" + 
+                ((stat.isFile() == true)?"文件":"") + 
+                ((stat.isDirectory() == true)?"目录":"") + 
+                ((stat.isBlockDevice() == true)?"块设备":"") + 
+                ((stat.isCharacterDevice() == true)?"字符设备":"") + 
+                ((stat.isSymbolicLink() == true)?"软链接":"") + 
+                ((stat.isFIFO() == true)?"FIFO":"") + 
+                ((stat.isSocket() == true)?"socket":"")
+            );
+        }catch(e){
+            console.log(e)
+        }
+    }else console.log("没有指定文件")
+    
+}

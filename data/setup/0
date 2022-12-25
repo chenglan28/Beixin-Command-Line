@@ -1,0 +1,2 @@
+console.log(`欢迎使用 北信命令行\x1B[36mv${require("./config").version.join(".")}\x1B[37m 版权所有:橙蓝`);
+console.log("有关命令查询,请使用命令 help [command]");

@@ -1,0 +1,4 @@
+RENAME [oldPath] [newPath]
+
+   oldPath - 原始路径
+   newPath - 新路径

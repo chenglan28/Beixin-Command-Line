@@ -1,0 +1,7 @@
+var fs = require("fs");
+module.exports = (cmd)=>{
+    try{
+        eval(fs.readFileSync(cmd[1]).toString())
+    }
+    catch(e){console.log(e)}
+}

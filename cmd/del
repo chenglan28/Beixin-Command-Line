@@ -1,0 +1,13 @@
+var fs = require("fs")
+module.exports = (cmd)=>{
+    if(cmd[1] != "" && cmd[1] != undefined) {
+        cmd[1] = global.path + cmd[1];
+        try {
+            fs.unlinkSync(cmd[1])
+            console.log(`成功删除文件: ${cmd[1]}`)
+        }catch(e){
+            console.log(e)
+        }
+    }else console.log("没有指定文件")
+    
+}

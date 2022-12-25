@@ -1,0 +1,28 @@
+var fs = require("fs");
+module.exports = (cmd)=>{
+    var http = require('http');
+    var _data = "";
+    http.get(cmd[1], function (req,err) {
+        if(err)console.log(err);
+        var f;
+        req.on("data",data=>{
+            _data += data.toString();
+            if(cmd[2] != "" && cmd[2] != undefined) {
+                cmd[2] = global.path + cmd[2];
+                try {
+                    fs.writeFileSync(cmd[2],data,{recursive: true,flag:"a+"});
+                    f = 1;
+                }catch(e){
+                    console.log(e)
+                }
+            }
+        });
+        req.on("end",()=>{
+            if(f == 1 && cmd[2] != "" && cmd[2] != undefined)console.log(`成功将 ${cmd[1]}\n拷贝到 ${cmd[2]}`);
+            console.log(_data);
+        })
+
+    }).on("error",err=>{
+        console.log(err.message)
+    })
+}

@@ -1,0 +1,7 @@
+module.exports = (cmd)=>{
+    try{
+        cmd.shift();
+        console.log(eval(cmd.join(" ")));
+    }
+    catch(e){console.log(e)}
+}

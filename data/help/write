@@ -1,0 +1,5 @@
+WRITE [path] [data]
+
+   path - 路径
+   data - 数据
+   

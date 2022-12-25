@@ -1,0 +1,3 @@
+help [command]
+
+    command - 显示该命令的帮助信息

@@ -1,0 +1,6 @@
+var fs = require("fs")
+module.exports = (cmd)=>{
+    if(cmd[1] == "" || cmd[1] == undefined)console.log(fs.readFileSync("data/help/-").toString());
+    else if(fs.existsSync("data/help/" + cmd[1]) && fs.statSync("help/" + cmd[1]).isFile())console.log(fs.readFileSync("data/help/" + cmd[1]).toString());
+    else console.log(`没有找到 ${cmd[1]} 的帮助信息`);
+}

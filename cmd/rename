@@ -1,0 +1,13 @@
+var fs = require("fs")
+module.exports = (cmd)=>{
+    if(cmd[1] != "" && cmd[1] != undefined && cmd[2] != "" && cmd[2] != undefined) {
+        cmd[1] = global.path + cmd[1];
+        cmd[2] = global.path + cmd[2];
+        try {
+            fs.renameSync(global.path + cmd[1],global.path + cmd[2]);
+            console.log(`已将 ${global.path + cmd[1]} 改名为 ${global.path + cmd[2]}`)
+        }catch(e){
+            console.log(e)
+        }
+    }else console.log("没有指定目录")
+}

@@ -1,0 +1,11 @@
+var fs = require("fs");
+var compressing = require('compressing');
+module.exports = (cmd)=>{
+    compressing.zip.compressDir(global.path + cmd[1], global.path + cmd[2])
+    .then(() => {
+        console.log(`已将 ${global.path + cmd[1]} 的内容压缩并储存在 ${global.path + cmd[2]} 文件中`);
+    })
+    .catch(err => {
+        console.error(err);
+    });
+}

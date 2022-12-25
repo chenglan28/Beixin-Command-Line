@@ -1,0 +1,25 @@
+﻿欢迎使用 北信命令行 版本: 22.12.24.0 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 
+Web Cmd开放于 8000 ,访问密匙为:****** 
+./ root@ curl http://chenglan28.github.io
+read ECONNRESET 
+./ root@ curl http://chenglan28.github.io/index.html
+read ECONNRESET 
+欢迎使用 北信命令行 版本: 22.12.24.0 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 
+欢迎使用 北信命令行 版本: 22.12.24.0 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 
+./ root@ shutdown
+欢迎使用 北信命令行 版本: 22.12.24.0 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 
+./ root@ shutdown
+欢迎使用 北信命令行 版本: 22.12.24.0 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 
+./ root@ shutdown
+欢迎使用 北信命令行v[34m1.0.0[37m 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 
+./ root@ 
+欢迎使用 北信命令行v[36m1.0.0[37m 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 
+欢迎使用 北信命令行[36mv1.0.0[37m 版权所有:橙蓝 
+有关命令查询,请使用命令 help [command] 

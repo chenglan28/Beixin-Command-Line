@@ -1,0 +1,4 @@
+ZIP [zipPath] [path]
+
+   path - 压缩的目录
+   zipPath - 压缩包的路径

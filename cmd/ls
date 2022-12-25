@@ -1,0 +1,38 @@
+const fs = require("fs");
+module.exports = (cmd)=>{
+    try{
+        if(cmd[1] == "" || cmd[1] == undefined){
+            if(fs.existsSync(global.path) == true){
+                var file = fs.readdirSync(global.path);
+                for(var i = 0;i<file.length;i++){
+                    console.log(
+                        (fs.statSync(global.path + file[i]).isFile() == true)?
+                        file[i] + "   " + fs.statSync(global.path + file[i]).size + " " + "字节":
+                        "\x1B[36m" + file[i] + "\x1B[37m/"
+                    );
+                }
+                if(file.length == 0)console.log("没有文件");
+            }
+            else {
+                console.log("此目录不存在或不为目录")
+            }
+        }
+        else {
+            if(cmd[cmd.length - 1] != "/")cmd[1] += "/"
+            cmd[1] = global.path + cmd[1];
+            const fs = require("fs");
+            if(fs.existsSync(cmd[1]) == true){
+                var file = fs.readdirSync(cmd[1]);
+                for(var i = 0;i<file.length;i++){
+                    console.log(
+                        (fs.statSync(cmd[1] + file[i]).isFile() == true)?
+                        file[i] + "   " + fs.statSync(cmd[1] + file[i]).size + " " + "字节":
+                        "\x1B[36m" + file[i] + "\x1B[37m/"
+                    );
+                }
+                if(file.length == 0)console.log("没有文件");
+            }
+            else console.log("此目录不存在或不为目录")
+        }
+    }catch(e){console.log(e)}
+}
